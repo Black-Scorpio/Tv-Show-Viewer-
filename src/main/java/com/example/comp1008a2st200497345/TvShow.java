@@ -63,4 +63,6 @@ public class TvShow {
     public String toString(){
         return String.format("Title: %s \n Genre: %s \n Rating: %d \n Seasons: %d", getShowTitle(),getShowGenre(),getShowRating(),getShowSeasons());
     }
+
+
 }
