@@ -10,12 +10,11 @@ public class TvShow {
     private int showRating, showSeasons;
     private Image tvImage;
     
-    public TvShow(String showTitle, String showGenre, int showRating, int showSeasons, Image tvImage) {
+    public TvShow(String showTitle, String showGenre, int showRating, int showSeasons) {
         setShowTitle(showTitle);
         setShowGenre(showGenre);
         setShowRating(showRating);
         setShowSeasons(showSeasons);
-        setTvImage(tvImage);
     }
 
 
@@ -50,14 +49,6 @@ public class TvShow {
 
     public void setShowSeasons(int showSeasons) {
         this.showSeasons = showSeasons;
-    }
-
-    public Image getTvImage() {
-        return tvImage;
-    }
-
-    public void setTvImage(Image tvImage) {
-        this.tvImage = tvImage;
     }
 
     public String toString(){
