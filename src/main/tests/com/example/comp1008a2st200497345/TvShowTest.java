@@ -12,7 +12,7 @@ class TvShowTest {
 
     @BeforeEach
     void setUp() {
-        tvShow = new TvShow("You","Comedy",2,3);
+        tvShow = new TvShow("You","Comedy",2.1,3);
     }
 
     @Test
@@ -27,10 +27,6 @@ class TvShowTest {
     }
 
 
-    @Test
-    void setShowTitleInvalidCase() {
-        Assertions.assertThrows(IllegalArgumentException.class, ()->tvShow.setShowTitle("you"));
-    }
 
     @Test
     void setShowGenre() {
@@ -52,6 +48,11 @@ class TvShowTest {
     void setShowRatingInvalidNegative(){
         Assertions.assertThrows(IllegalArgumentException.class, ()-> tvShow.setShowRating(-1));
 
+    }
+
+    @Test
+    void setShowRatingInvalidGreaterThan5(){
+        Assertions.assertThrows(IllegalArgumentException.class, ()-> tvShow.setShowRating(5.3));
     }
 
     @Test
