@@ -4,9 +4,8 @@ import javafx.scene.image.Image;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
+
 
 public class TvShow {
     private String showTitle;
