@@ -53,7 +53,11 @@ class TvGuideTest {
 
     @Test
     void setDatePlayingInvalidPastDate() {
-        guide.setDatePlaying(LocalDate.now());
-        assertEquals(LocalDate.now(), guide.getDatePlaying());
+        Assertions.assertThrows(IllegalArgumentException.class, ()-> guide.setDatePlaying(LocalDate.now().minusDays(1)));
+    }
+
+    @Test
+    void setDatePlayingInvalidTooFarIntoTheFutureDate() {
+        Assertions.assertThrows(IllegalArgumentException.class, ()-> guide.setDatePlaying(LocalDate.now().plusDays(6)));
     }
 }

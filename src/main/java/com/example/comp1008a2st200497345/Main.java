@@ -7,7 +7,8 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Main extends Application {
     @Override
@@ -24,10 +25,12 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-       //launch();
+       launch();
 
-        Date date = new Date(2022,2,6);
-        System.out.println(date.getMonth());
+
+
+
+
 
 
     }

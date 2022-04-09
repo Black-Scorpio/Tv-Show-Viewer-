@@ -19,9 +19,13 @@ public class TvShow {
         setShowGenre(showGenre);
         setShowRating(showRating);
         setShowSeasons(showSeasons);
+        String fileName = String.format("Images/%s_cover.jpg",showTitle);
+        tvImage = new Image(getClass().getResource(fileName).toExternalForm());
     }
 
-
+    public Image getTvImage() {
+        return tvImage;
+    }
 
     public String getShowTitle() {
         return showTitle;
@@ -52,7 +56,8 @@ public class TvShow {
     public void setShowGenre(String showGenre) {
         showGenre = showGenre.trim();
         showGenre = showGenre.substring(0,1).toUpperCase() + showGenre.substring(1);
-        List<String> genre = Arrays.asList("Comedy","Action", "Adventure", "Crime", "Mystery", "Fantasy", "Historical", "Historical Fiction", "Horror", "Romance");
+        List<String> genre = Arrays.asList("Comedy","Action","Sitcom", "Adventure","Thriller",
+                "Crime", "Mystery", "Fantasy", "Historical", "Historical Fiction", "Horror", "Romance", "Drama");
         if(genre.contains(showGenre))
             this.showGenre = showGenre;
         else
@@ -65,8 +70,7 @@ public class TvShow {
 
     public void setShowRating(double showRating) {
         //Formatting the rating to 1 decimal place
-        DecimalFormat df = new DecimalFormat("#.#");
-        df.format(showRating);
+
         if(showRating >= 1 && showRating <= 5)
             this.showRating = showRating;
         else
