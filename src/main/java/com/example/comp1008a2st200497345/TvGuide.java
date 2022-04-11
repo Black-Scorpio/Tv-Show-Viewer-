@@ -63,9 +63,18 @@ public class TvGuide {
                     "The date must not be greater than 6 days into the future.");
     }
 
+    /**
+     * Removes the first TvShow object in the list and sends it to the last index in the list
+     * @return
+     */
     public TvShow viewNextShow(){
+        TvShow firstIndex;
         if (shows.size()>0)
-            return shows.remove(0);
+        {
+            firstIndex = shows.remove(0);
+            shows.add(firstIndex);
+            return shows.get(0);
+        }
         else
             return null;
     }

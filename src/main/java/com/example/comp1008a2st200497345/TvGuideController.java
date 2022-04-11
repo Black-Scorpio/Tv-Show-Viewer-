@@ -32,17 +32,23 @@ public class TvGuideController implements Initializable {
     @FXML
     private Button nextShowBtn;
 
+    @FXML
+    private Label datePlayingLbl;
+
 
     private TvGuide guide;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Creating a guide to store TvShow objects
         guide = new TvGuide(24, LocalDate.now());
         TvShow tvShowYou = new TvShow("You","Thriller",4.5,3);
         TvShow tvShowScrubs = new TvShow("Scrubs","Sitcom",4.2,11);
         TvShow tvShowYellowStone = new TvShow("YellowStone","Drama",4.8,4);
         TvShow tvShowTheOffice = new TvShow("TheOffice","Sitcom",4.4,11);
         TvShow tvShowUpload = new TvShow("Upload","Comedy",3.8,2);
+
+        // Adding TvShows to the guide
         guide.addTvShow(tvShowYellowStone);
         guide.addTvShow(tvShowYou);
         guide.addTvShow(tvShowScrubs);
@@ -67,6 +73,7 @@ public class TvGuideController implements Initializable {
         genreLbl.setText(String.format("Genre:\n%s", tvShow.getShowGenre()));
         seasonsLbl.setText(String.format("Seasons:\n%d",tvShow.getShowSeasons()));
         ratingLbl.setText(String.format("Rating:\n%.1f/5",tvShow.getShowRating()));
+        datePlayingLbl.setText(String.format("Date Playing:\n%s",guide.getDatePlaying().toString()));
         showCoverImage.setImage(tvShow.getTvImage());
     }
 }
