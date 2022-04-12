@@ -1,11 +1,18 @@
 package com.example.comp1008a2st200497345;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -75,6 +82,22 @@ public class TvGuideController implements Initializable {
         ratingLbl.setText(String.format("Rating:\n%.1f/5",tvShow.getShowRating()));
         datePlayingLbl.setText(String.format("Date Playing:\n%s",guide.getDatePlaying().toString()));
         showCoverImage.setImage(tvShow.getTvImage());
+    }
+
+
+    /**
+     * Changes the scene to the tv selections giving shows to add to the collection
+     * @param event
+     */
+    @FXML
+    void addShows(ActionEvent event) throws IOException {
+        Parent tvViewParent = FXMLLoader.load(getClass().getResource("tv-selection.fxml"));
+
+        Scene addTvScene = new Scene(tvViewParent);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(addTvScene);
+        window.show();
     }
 }
 

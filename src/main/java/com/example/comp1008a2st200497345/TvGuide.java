@@ -32,7 +32,7 @@ public class TvGuide {
         return tvChannel;
     }
 
-    /**TODO CREATE A TOSTRING THAT RETURNS A LIST OF ALL OF THE SHOWS PLAYING IN THE COLLECTION
+
 
     /**
      * Sets the tvChannel to be between channel 0-1000 exclusive
@@ -78,5 +78,6 @@ public class TvGuide {
         else
             return null;
     }
+
 
 }

@@ -12,7 +12,7 @@ public class TvShow {
     private String showGenre;
     private int showSeasons;
     private double showRating;
-    private Image tvImage;
+    private final Image tvImage;
     
     public TvShow(String showTitle, String showGenre, double showRating, int showSeasons) {
         setShowTitle(showTitle);

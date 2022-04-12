@@ -83,6 +83,16 @@
                </font>
             </Button>
          </right>
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#addShows" text="Add TvShows" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="30.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="Bell MT" size="12.0" />
+               </font>
+            </Button>
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>
