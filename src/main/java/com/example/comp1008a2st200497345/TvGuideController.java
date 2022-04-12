@@ -91,7 +91,7 @@ public class TvGuideController implements Initializable {
      */
     @FXML
     void addShows(ActionEvent event) throws IOException {
-        Parent tvViewParent = FXMLLoader.load(getClass().getResource("tv-selection.fxml"));
+        Parent tvViewParent = FXMLLoader.load(getClass().getResource("add-shows.fxml"));
 
         Scene addTvScene = new Scene(tvViewParent);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
