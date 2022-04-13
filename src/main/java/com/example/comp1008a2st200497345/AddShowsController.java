@@ -24,8 +24,6 @@ public class AddShowsController implements Initializable {
     @FXML
     private Button addShowsBtn;
 
-    @FXML
-    private DatePicker datePicker;
 
     @FXML
     private CheckBox dexterCb;
@@ -95,7 +93,7 @@ public class AddShowsController implements Initializable {
             String showTitle = "";
             if (checkBox.isSelected())
                 showTitle = checkBox.getText().replaceAll(" ","");
-            //Using a switch case to get the title of the shows that are checkboxed and adding it to the show list
+            //Using a switch case to get the title of the shows that are checked and adding it to the show list
             switch (showTitle) {
                 case "Dexter" -> GuideData.shows.addTvShow(dexter);
                 case "Spongebob" -> GuideData.shows.addTvShow(spongebob);

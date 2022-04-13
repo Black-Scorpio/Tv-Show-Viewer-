@@ -43,7 +43,7 @@ public class TvGuideController implements Initializable {
     private Label datePlayingLbl;
 
 
-
+    TvShow tvShow;
     //Tv objects to add to the guide shows list
     TvShow tvShowYou = new TvShow("You","Thriller",4.5,3);
     TvShow tvShowScrubs = new TvShow("Scrubs","Sitcom",4.2,11);
@@ -55,12 +55,17 @@ public class TvGuideController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        // Adding TvShows to the guide
-        GuideData.shows.addTvShow(tvShowYellowStone);
-        GuideData.shows.addTvShow(tvShowYou);
-        GuideData.shows.addTvShow(tvShowScrubs);
-        GuideData.shows.addTvShow(tvShowTheOffice);
-        GuideData.shows.addTvShow(tvShowUpload);
+
+        // Adding TvShows to the guide if the guide is empty on first startup
+        if(GuideData.shows.viewNextShowFromList() == null)
+        {
+            GuideData.shows.addTvShow(tvShowYou);
+            GuideData.shows.addTvShow(tvShowScrubs);
+            GuideData.shows.addTvShow(tvShowTheOffice);
+            GuideData.shows.addTvShow(tvShowUpload);
+            GuideData.shows.addTvShow(tvShowYellowStone);
+        }
+
 
         viewNextShow();
     }
@@ -73,8 +78,7 @@ public class TvGuideController implements Initializable {
     @FXML
     private void viewNextShow(){
 
-        TvShow tvShow = GuideData.shows.viewNextShow();
-
+        tvShow = GuideData.shows.viewNextShowFromList();
         //updating the labels with the tvShow information
         titleLbl.setText(String.format("Title:\n%s", tvShow.getShowTitle()));
         genreLbl.setText(String.format("Genre:\n%s", tvShow.getShowGenre()));

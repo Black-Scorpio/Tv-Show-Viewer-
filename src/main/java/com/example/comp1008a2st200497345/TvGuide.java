@@ -67,7 +67,7 @@ public class TvGuide {
      * Removes the first TvShow object in the list and sends it to the last index in the list
      * @return
      */
-    public TvShow viewNextShow(){
+    public TvShow viewNextShowFromList(){
         TvShow firstIndex;
         if (shows.size()>0)
         {
