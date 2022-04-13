@@ -10,51 +10,40 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comp1008a2st200497345.TvGuideController">
+<AnchorPane prefHeight="686.0" prefWidth="732.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comp1008a2st200497345.TvGuideController">
    <children>
       <BorderPane layoutX="201.0" prefHeight="400.0" prefWidth="601.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <ImageView fx:id="showCoverImage" fitHeight="500.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+            <VBox>
+               <children>
+                  <ImageView fx:id="showCoverImage" fitHeight="500.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </VBox>
          </center>
          <left>
-            <VBox prefHeight="700.0" prefWidth="236.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="700.0" prefWidth="236.0" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="datePlayingLbl" text="Date Playing:">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
                      <font>
                         <Font name="Bell MT" size="20.0" />
                      </font>
                   </Label>
                   <Label fx:id="titleLbl" text="Title:">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
                      <font>
                         <Font name="Bell MT" size="20.0" />
                      </font>
                   </Label>
                   <Label fx:id="genreLbl" text="Genre:">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
                      <font>
                         <Font name="Bell MT" size="20.0" />
                      </font>
                   </Label>
                   <Label fx:id="seasonsLbl" text="Seasons:">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
                      <font>
                         <Font name="Bell MT" size="20.0" />
                      </font>
                   </Label>
                   <Label fx:id="ratingLbl" text="Rating:">
-                     <padding>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
                      <font>
                         <Font name="Bell MT" size="20.0" />
                      </font>
@@ -65,7 +54,7 @@
          <top>
             <StackPane BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="CENTER" prefHeight="104.0" prefWidth="345.0" text="What's Playing">
+                  <Label id="header" alignment="CENTER" prefHeight="104.0" prefWidth="345.0" text="Show's Playing">
                      <font>
                         <Font name="Berlin Sans FB" size="49.0" />
                      </font>
@@ -74,9 +63,9 @@
             </StackPane>
          </top>
          <right>
-            <Button fx:id="nextShowBtn" mnemonicParsing="false" onAction="#viewNextShow" prefHeight="91.0" prefWidth="163.0" text="View Shows Playing" BorderPane.alignment="CENTER">
+            <Button fx:id="nextShowBtn" mnemonicParsing="false" onAction="#viewNextShow" text="View Next Show" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets left="20.0" right="20.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </BorderPane.margin>
                <font>
                   <Font name="Bell MT Bold" size="14.0" />
@@ -93,6 +82,9 @@
                </font>
             </Button>
          </bottom>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
       </BorderPane>
    </children>
 </AnchorPane>

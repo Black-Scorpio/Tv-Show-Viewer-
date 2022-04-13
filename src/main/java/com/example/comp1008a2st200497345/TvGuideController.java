@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
@@ -83,7 +84,7 @@ public class TvGuideController implements Initializable {
         seasonsLbl.setText(String.format("Seasons:\n%d",tvShow.getShowSeasons()));
         ratingLbl.setText(String.format("Rating:\n%.1f/5",tvShow.getShowRating()));
         datePlayingLbl.setText(String.format("Date Playing:\n%s",GuideData.shows.getDatePlaying().toString()));
-        showCoverImage.setImage(tvShow.getTvImage());
+        showCoverImage.setImage(new Image(getClass().getResource(tvShow.getFileName()).toExternalForm()));
     }
 
 

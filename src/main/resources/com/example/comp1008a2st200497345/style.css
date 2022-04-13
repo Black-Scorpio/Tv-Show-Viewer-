@@ -1,0 +1,25 @@
+.root{
+    -fx-background-color: #FFFDD0;
+}
+
+.label{
+    -fx-font-family: "Bell MT";
+    -fx-font-size: 20px;
+}
+
+.button{
+    -fx-font-family: "Bell MT";
+    -fx-font-size: 20px;
+    -fx-background-radius: 15px;
+
+}
+
+.check-box{
+    -fx-font-family: "Bell MT";
+    -fx-font-size: 20px;
+}
+
+#header{
+    -fx-font-family: "Bell MT";
+    -fx-font-size: 30px;
+}

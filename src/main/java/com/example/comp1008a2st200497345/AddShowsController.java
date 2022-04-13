@@ -7,10 +7,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Alert.AlertType;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -75,6 +76,10 @@ public class AddShowsController implements Initializable {
      */
     @FXML
     void addShowsToList(ActionEvent event) {
+        //setting up an alert when the shows are added
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Show list updated!");
+        alert.setContentText("Your shows have been added to the list!");
         //Creating TvShows that can be added
         TvShow dexter = new TvShow("Dexter","Crime",4.6,7);
         TvShow spongebob = new TvShow("Spongebob","Comedy",4.9,13);
@@ -105,6 +110,7 @@ public class AddShowsController implements Initializable {
                 case "TheFlash" -> GuideData.shows.addTvShow(theFlash);
                 case "SonsOfAnarchy" -> GuideData.shows.addTvShow(sonsOfAnarchy);
             }
+            alert.show();
 
         }
     }

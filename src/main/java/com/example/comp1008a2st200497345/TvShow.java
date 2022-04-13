@@ -10,20 +10,26 @@ public class TvShow {
     private String showGenre;
     private int showSeasons;
     private double showRating;
-    private final Image tvImage;
+    private String fileName;
+   // private final Image tvImage;
+
     
     public TvShow(String showTitle, String showGenre, double showRating, int showSeasons) {
         setShowTitle(showTitle);
         setShowGenre(showGenre);
         setShowRating(showRating);
         setShowSeasons(showSeasons);
-        String fileName = String.format("Images/%s_cover.jpg",showTitle);
-        tvImage = new Image(getClass().getResource(fileName).toExternalForm());
+        fileName = String.format("Images/%s_cover.jpg",showTitle);
+        //tvImage = new Image(getClass().getResource(fileName).toExternalForm());
     }
 
-    public Image getTvImage() {
-        return tvImage;
+    public String getFileName() {
+        return fileName;
     }
+
+    //    public Image getTvImage() {
+//        return tvImage;
+//    }
 
     public String getShowTitle() {
         return showTitle;

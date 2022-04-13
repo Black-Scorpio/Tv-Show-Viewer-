@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comp1008a2st200497345.AddShowsController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comp1008a2st200497345.AddShowsController">
    <children>
       <BorderPane layoutX="173.0" layoutY="90.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -102,7 +102,7 @@
          <top>
             <StackPane BorderPane.alignment="CENTER">
                <children>
-                  <Label text="Select Up to 3 Shows">
+                  <Label id="header" text="Select Up to 3 Shows">
                      <font>
                         <Font name="Bell MT Bold" size="36.0" />
                      </font>
