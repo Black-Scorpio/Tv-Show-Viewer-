@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("tv-guide.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-
+        //Setting up the icon for the scene
         Image icon = new Image(String.valueOf(getClass().getResource("Images/tvGuideLogo.png")));
         stage.getIcons().add(icon);
 

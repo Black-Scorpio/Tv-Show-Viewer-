@@ -14,8 +14,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.util.ArrayList;
 
 import java.util.ResourceBundle;
 
@@ -56,7 +54,7 @@ public class TvGuideController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
-        // Adding TvShows to the guide if the guide is empty on first startup
+        // Adding TvShows to the guide if the GuideData.shows is empty on first startup
         if(GuideData.shows.viewNextShowFromList() == null)
         {
             GuideData.shows.addTvShow(tvShowYou);

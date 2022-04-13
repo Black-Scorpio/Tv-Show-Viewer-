@@ -1,8 +1,6 @@
 package com.example.comp1008a2st200497345;
 
 import javafx.scene.image.Image;
-
-import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.List;
 
@@ -68,6 +66,11 @@ public class TvShow {
         return showRating;
     }
 
+    /**
+     * showRating must be a number between 1-5
+     * if the number is not between 1-5 decimals included it will throw an error
+     * @param showRating
+     */
     public void setShowRating(double showRating) {
         //Formatting the rating to 1 decimal place
 
@@ -81,6 +84,10 @@ public class TvShow {
         return showSeasons;
     }
 
+    /**
+     * sets the number of showSeasons from a value of 1 or more
+     * @param showSeasons
+     */
     public void setShowSeasons(int showSeasons) {
         if(showSeasons >= 1)
             this.showSeasons = showSeasons;
@@ -88,6 +95,10 @@ public class TvShow {
             throw new IllegalArgumentException("The show must have 1 or more seasons");
     }
 
+    /**
+     * Returns information about the TvShow objects attributes
+     * @return
+     */
     public String toString(){
         return String.format("Title: %s \n Genre: %s \n Rating: %f \n Seasons: %d", getShowTitle(),getShowGenre(),getShowRating(),getShowSeasons());
     }

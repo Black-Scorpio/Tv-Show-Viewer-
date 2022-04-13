@@ -45,6 +45,10 @@ public class TvGuide {
             throw new IllegalArgumentException("The tv channel must be between 0-1000");
     }
 
+    /**
+     * Returns the datePlaying
+     * @return
+     */
     public LocalDate getDatePlaying() {
         return datePlaying;
     }

@@ -9,13 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -71,6 +69,10 @@ public class AddShowsController implements Initializable {
     //Creating the list of checkbox items
     List<CheckBox> checkBoxes = new ArrayList<CheckBox>();
 
+    /**
+     * Checks which checkboxes are selected and adds shows to the TvGuideController to be viewed
+     * @param event
+     */
     @FXML
     void addShowsToList(ActionEvent event) {
         //Creating TvShows that can be added
@@ -81,6 +83,7 @@ public class AddShowsController implements Initializable {
         TvShow theFlash = new TvShow("TheFlash","Crime",4.2,8);
         TvShow sonsOfAnarchy = new TvShow("SonsOfAnarchy","Drama",4.8,7);
 
+        //Adding the checkboxes to the checkbox list to be iterated over
         checkBoxes.add(dexterCb);
         checkBoxes.add(spongebobCb);
         checkBoxes.add(loveIslandCb);
