@@ -43,24 +43,24 @@ public class TvGuideController implements Initializable {
     private Label datePlayingLbl;
 
 
-    private TvGuide guide;
+
+    //Tv objects to add to the guide shows list
+    TvShow tvShowYou = new TvShow("You","Thriller",4.5,3);
+    TvShow tvShowScrubs = new TvShow("Scrubs","Sitcom",4.2,11);
+    TvShow tvShowYellowStone = new TvShow("YellowStone","Drama",4.8,4);
+    TvShow tvShowTheOffice = new TvShow("TheOffice","Sitcom",4.4,11);
+    TvShow tvShowUpload = new TvShow("Upload","Comedy",3.8,2);
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Creating a guide to store TvShow objects
-        guide = new TvGuide(24, LocalDate.now());
-        TvShow tvShowYou = new TvShow("You","Thriller",4.5,3);
-        TvShow tvShowScrubs = new TvShow("Scrubs","Sitcom",4.2,11);
-        TvShow tvShowYellowStone = new TvShow("YellowStone","Drama",4.8,4);
-        TvShow tvShowTheOffice = new TvShow("TheOffice","Sitcom",4.4,11);
-        TvShow tvShowUpload = new TvShow("Upload","Comedy",3.8,2);
 
         // Adding TvShows to the guide
-        guide.addTvShow(tvShowYellowStone);
-        guide.addTvShow(tvShowYou);
-        guide.addTvShow(tvShowScrubs);
-        guide.addTvShow(tvShowTheOffice);
-        guide.addTvShow(tvShowUpload);
+        GuideData.shows.addTvShow(tvShowYellowStone);
+        GuideData.shows.addTvShow(tvShowYou);
+        GuideData.shows.addTvShow(tvShowScrubs);
+        GuideData.shows.addTvShow(tvShowTheOffice);
+        GuideData.shows.addTvShow(tvShowUpload);
 
         viewNextShow();
     }
@@ -73,14 +73,14 @@ public class TvGuideController implements Initializable {
     @FXML
     private void viewNextShow(){
 
-        TvShow tvShow = guide.viewNextShow();
+        TvShow tvShow = GuideData.shows.viewNextShow();
 
         //updating the labels with the tvShow information
         titleLbl.setText(String.format("Title:\n%s", tvShow.getShowTitle()));
         genreLbl.setText(String.format("Genre:\n%s", tvShow.getShowGenre()));
         seasonsLbl.setText(String.format("Seasons:\n%d",tvShow.getShowSeasons()));
         ratingLbl.setText(String.format("Rating:\n%.1f/5",tvShow.getShowRating()));
-        datePlayingLbl.setText(String.format("Date Playing:\n%s",guide.getDatePlaying().toString()));
+        datePlayingLbl.setText(String.format("Date Playing:\n%s",GuideData.shows.getDatePlaying().toString()));
         showCoverImage.setImage(tvShow.getTvImage());
     }
 

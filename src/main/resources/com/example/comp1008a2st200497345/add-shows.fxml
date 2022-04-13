@@ -67,7 +67,7 @@
                               <Insets top="15.0" />
                            </padding>
                         </CheckBox>
-                        <CheckBox fx:id="sonsOfAnarchyCb" mnemonicParsing="false" text="Sons of Anarchy">
+                        <CheckBox fx:id="sonsOfAnarchyCb" mnemonicParsing="false" text="Sons Of Anarchy">
                            <font>
                               <Font name="Bell MT" size="20.0" />
                            </font>
@@ -100,7 +100,7 @@
                            </VBox.margin></DatePicker>
                      </children>
                   </VBox>
-                  <Button fx:id="addShowsBtn" mnemonicParsing="false" text="Add Selected Shows" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button fx:id="addShowsBtn" mnemonicParsing="false" onAction="#addShowsToList" text="Add Selected Shows" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </center>

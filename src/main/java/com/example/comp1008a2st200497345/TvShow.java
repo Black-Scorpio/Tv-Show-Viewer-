@@ -50,14 +50,14 @@ public class TvShow {
     /**
      * The showGenre must be found in the list
      * "Comedy","Action", "Adventure", "Crime", "Mystery", "Fantasy",
-     * "Historical", "Historical Fiction", "Horror", "Romance"
+     * "Historical", "Historical Fiction", "Horror", "Romance", "Reality"
      * @param showGenre
      */
     public void setShowGenre(String showGenre) {
         showGenre = showGenre.trim();
         showGenre = showGenre.substring(0,1).toUpperCase() + showGenre.substring(1);
         List<String> genre = Arrays.asList("Comedy","Action","Sitcom", "Adventure","Thriller",
-                "Crime", "Mystery", "Fantasy", "Historical", "Historical Fiction", "Horror", "Romance", "Drama");
+                "Crime", "Mystery", "Fantasy", "Historical", "Historical Fiction", "Horror", "Romance", "Drama", "Reality");
         if(genre.contains(showGenre))
             this.showGenre = showGenre;
         else
